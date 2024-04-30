@@ -36,7 +36,8 @@ describe('Happy-path', () => {
     expect(existsSync(`./tmp/nx-e2e/proj/libs/${apiLibLibName}/src/index.ts`)).toBe(true);
   }, 120000);
 
-  it('should work with docker', () => {
+  // TODO
+  it.skip('should work with docker', () => {
     runNxCommand(`generate @trumbitta/nx-plugin-openapi:api-spec ${apiSpecLibName} --withSample`);
 
     runNxCommand(

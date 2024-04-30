@@ -1,6 +1,6 @@
 module.exports = {
-  displayName: 'nx-plugin-openapi',
-  preset: '../../jest.preset.js',
+  displayName: 'nx-plugin-unused-deps',
+
   globals: {
     'ts-jest': {
       tsconfig: '<rootDir>/tsconfig.spec.json',
@@ -11,6 +11,6 @@ module.exports = {
     '^.+\\.[tj]sx?$': 'ts-jest',
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
-  coverageDirectory: '../../coverage/packages/nx-plugin-openapi',
-  testTimeout: 30_000,
+  coverageDirectory: '../../coverage/packages/nx-plugin-unused-deps',
+  preset: '../../jest.preset.ts',
 };

@@ -1,3 +1,4 @@
+import { appRootPath } from '@nrwl/devkit';
 import {
   checkFilesExist,
   ensureNxProject,
@@ -7,7 +8,6 @@ import {
   updateFile,
 } from '@nrwl/nx-plugin/testing';
 // Devkit
-import { appRootPath } from '@nrwl/tao/src/utils/app-root';
 
 describe('nx-plugin-unused-deps', () => {
   const plugin = '@trumbitta/nx-plugin-unused-deps';
