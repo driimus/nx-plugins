@@ -1,4 +1,5 @@
-module.exports = {
+/* eslint-disable */
+export default {
   displayName: 'nx-plugin-openapi',
 
   globals: {
@@ -13,5 +14,5 @@ module.exports = {
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
   coverageDirectory: '../../coverage/packages/nx-plugin-openapi',
   testTimeout: 30_000,
-  preset: '../../jest.preset.ts',
+  preset: '../../jest.preset.js',
 };

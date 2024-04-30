@@ -1,5 +1,5 @@
 {
-  "root": "packages/open-in-gitpod",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/open-in-gitpod/src",
   "projectType": "library",
   "targets": {
@@ -12,7 +12,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/packages/open-in-gitpod"],
+      "outputs": ["{workspaceRoot}/coverage/packages/open-in-gitpod"],
       "options": {
         "jestConfig": "packages/open-in-gitpod/jest.config.ts",
         "passWithNoTests": true

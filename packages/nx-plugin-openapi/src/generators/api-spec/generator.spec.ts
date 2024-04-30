@@ -13,7 +13,7 @@ describe('api-spec schematic', () => {
   const defaultSchema: ApiSpecGeneratorSchema = { name: 'test' };
 
   beforeEach(() => {
-    appTree = createTreeWithEmptyWorkspace(2);
+    appTree = createTreeWithEmptyWorkspace();
   });
 
   describe('not nested', () => {

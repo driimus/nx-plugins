@@ -12,7 +12,7 @@ describe('check generator', () => {
   let appTree: Tree;
 
   beforeEach(() => {
-    appTree = createTreeWithEmptyWorkspace(2);
+    appTree = createTreeWithEmptyWorkspace();
     addDependenciesToPackageJson(appTree, { react: 'latest' }, { jest: 'latest' });
   });
 

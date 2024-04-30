@@ -1,5 +1,5 @@
 {
-  "root": "packages/nx-plugin-openapi",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/nx-plugin-openapi/src",
   "projectType": "library",
   "targets": {
@@ -11,7 +11,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/packages/nx-plugin-openapi"],
+      "outputs": ["{workspaceRoot}/coverage/packages/nx-plugin-openapi"],
       "options": {
         "jestConfig": "packages/nx-plugin-openapi/jest.config.ts",
         "passWithNoTests": true

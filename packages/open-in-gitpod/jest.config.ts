@@ -1,4 +1,5 @@
-module.exports = {
+/* eslint-disable */
+export default {
   displayName: 'open-in-gitpod',
 
   globals: {
@@ -12,5 +13,5 @@ module.exports = {
   },
   moduleFileExtensions: ['ts', 'tsx', 'json', 'js', 'jsx'],
   coverageDirectory: '../../coverage/packages/open-in-gitpod',
-  preset: '../../jest.preset.ts',
+  preset: '../../jest.preset.js',
 };

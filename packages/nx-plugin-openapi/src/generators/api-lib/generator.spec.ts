@@ -20,7 +20,7 @@ describe('api-lib schematic', () => {
   };
 
   beforeEach(async () => {
-    appTree = createTreeWithEmptyWorkspace(2);
+    appTree = createTreeWithEmptyWorkspace();
   });
 
   describe('not nested', () => {
