@@ -1,4 +1,5 @@
 {
+  "name": "open-in-gitpod",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/open-in-gitpod/src",
   "projectType": "library",
@@ -11,7 +12,7 @@
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
+      "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/packages/open-in-gitpod"],
       "options": {
         "jestConfig": "packages/open-in-gitpod/jest.config.ts",
@@ -19,7 +20,7 @@
       }
     },
     "build": {
-      "executor": "@nrwl/js:tsc",
+      "executor": "@nx/js:tsc",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/packages/open-in-gitpod",

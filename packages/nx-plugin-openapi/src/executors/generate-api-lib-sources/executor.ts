@@ -1,4 +1,4 @@
-import { ExecutorContext, logger } from '@nrwl/devkit';
+import { ExecutorContext, logger } from '@nx/devkit';
 import { spawn } from 'cross-spawn';
 import { mkdirSync } from 'fs';
 import { deleteOutputDir } from '../../utils/delete-output-dir';

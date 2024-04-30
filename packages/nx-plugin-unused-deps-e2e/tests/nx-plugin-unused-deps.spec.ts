@@ -1,4 +1,4 @@
-import { appRootPath } from '@nrwl/devkit';
+import { appRootPath } from '@nx/devkit';
 import {
   checkFilesExist,
   ensureNxProject,
@@ -6,7 +6,7 @@ import {
   runCommandAsync,
   runNxCommandAsync,
   updateFile,
-} from '@nrwl/nx-plugin/testing';
+} from '@nx/plugin/testing';
 // Devkit
 
 describe('nx-plugin-unused-deps', () => {
@@ -17,7 +17,7 @@ describe('nx-plugin-unused-deps', () => {
     ensureNxProject(plugin, distPath);
 
     await runCommandAsync('npm i react express; npm i -D jest @types/express');
-    await runNxCommandAsync('generate @nrwl/node:app --name=app');
+    await runNxCommandAsync('generate @nx/node:app --name=app');
     await runCommandAsync(`npm remove @trumbitta/nx-plugin-unused-deps`);
 
     /**

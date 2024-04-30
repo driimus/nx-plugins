@@ -10,8 +10,8 @@ import {
   offsetFromRoot,
   ProjectType,
   readWorkspaceConfiguration,
-} from '@nrwl/devkit';
-import { runTasksInSerial } from '@nrwl/workspace/src/utilities/run-tasks-in-serial';
+} from '@nx/devkit';
+import { runTasksInSerial } from '@nx/workspace/src/utilities/run-tasks-in-serial';
 
 // Schematics
 import init from '../init/generator';

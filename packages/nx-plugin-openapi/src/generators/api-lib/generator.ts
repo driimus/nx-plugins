@@ -1,13 +1,19 @@
 // Nrwl
 import {
-  addProjectConfiguration, formatFiles, generateFiles, GeneratorCallback,
+  addProjectConfiguration,
+  formatFiles,
+  generateFiles,
+  GeneratorCallback,
   getWorkspaceLayout,
-  joinPathFragments, names,
+  joinPathFragments,
+  names,
   offsetFromRoot,
   ProjectType,
-  readWorkspaceConfiguration, Tree, updateJson
-} from '@nrwl/devkit';
-import { runTasksInSerial } from '@nrwl/workspace/src/utilities/run-tasks-in-serial';
+  readWorkspaceConfiguration,
+  Tree,
+  updateJson,
+} from '@nx/devkit';
+import { runTasksInSerial } from '@nx/workspace/src/utilities/run-tasks-in-serial';
 // Third Parties
 import { join } from 'path';
 import { GenerateApiLibSourcesExecutorSchema } from '../../executors/generate-api-lib-sources/schema';
@@ -15,9 +21,6 @@ import { GenerateApiLibSourcesExecutorSchema } from '../../executors/generate-ap
 import init from '../init/generator';
 // Schemas
 import { ApiLibGeneratorSchema } from './schema';
-
-
-
 
 const projectType: ProjectType = 'library';
 

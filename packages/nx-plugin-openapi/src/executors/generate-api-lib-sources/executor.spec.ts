@@ -1,7 +1,7 @@
 jest.mock('child_process');
-jest.mock('@nrwl/devkit');
+jest.mock('@nx/devkit');
 
-import { ExecutorContext, logger } from '@nrwl/devkit';
+import { ExecutorContext, logger } from '@nx/devkit';
 import { mockSpawn } from '../../test/mockSpawn';
 import executor from './executor';
 import { GenerateApiLibSourcesExecutorSchema } from './schema';

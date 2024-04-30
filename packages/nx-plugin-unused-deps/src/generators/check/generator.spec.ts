@@ -1,6 +1,6 @@
-import { createTreeWithEmptyWorkspace } from '@nrwl/devkit/testing';
-import { Tree, addDependenciesToPackageJson, logger } from '@nrwl/devkit';
-import * as devkit from '@nrwl/devkit';
+import { createTreeWithEmptyWorkspace } from '@nx/devkit/testing';
+import { Tree, addDependenciesToPackageJson, logger } from '@nx/devkit';
+import * as devkit from '@nx/devkit';
 
 import generator from './generator';
 

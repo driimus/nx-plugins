@@ -6,7 +6,7 @@
   "executors": "./executors.json",
   "license": "MIT",
   "peerDependencies": {
-    "@nrwl/workspace": ">=13.0.0"
+    "@nx/workspace": "16.0.0"
   },
   "files": [
     "src/**/*.*",

@@ -1,8 +1,8 @@
 // Devkit
-import { GeneratorCallback, Tree, addDependenciesToPackageJson } from '@nrwl/devkit';
+import { GeneratorCallback, Tree, addDependenciesToPackageJson } from '@nx/devkit';
 
 // Nrwl
-import { runTasksInSerial } from '@nrwl/workspace/src/utilities/run-tasks-in-serial';
+import { runTasksInSerial } from '@nx/workspace/src/utilities/run-tasks-in-serial';
 
 // Utils
 import { openapiGeneratorCliVersion } from '../../utils/versions';

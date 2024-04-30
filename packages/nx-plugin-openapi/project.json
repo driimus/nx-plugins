@@ -1,4 +1,5 @@
 {
+  "name": "nx-plugin-openapi",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/nx-plugin-openapi/src",
   "projectType": "library",
@@ -10,7 +11,7 @@
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
+      "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/packages/nx-plugin-openapi"],
       "options": {
         "jestConfig": "packages/nx-plugin-openapi/jest.config.ts",
@@ -18,7 +19,7 @@
       }
     },
     "build": {
-      "executor": "@nrwl/js:tsc",
+      "executor": "@nx/js:tsc",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/packages/nx-plugin-openapi",

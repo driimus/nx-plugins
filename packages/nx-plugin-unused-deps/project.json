@@ -1,4 +1,5 @@
 {
+  "name": "nx-plugin-unused-deps",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/nx-plugin-unused-deps/src",
   "projectType": "library",
@@ -11,7 +12,7 @@
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
+      "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/packages/nx-plugin-unused-deps"],
       "options": {
         "jestConfig": "packages/nx-plugin-unused-deps/jest.config.ts",
@@ -19,7 +20,7 @@
       }
     },
     "build": {
-      "executor": "@nrwl/js:tsc",
+      "executor": "@nx/js:tsc",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/packages/nx-plugin-unused-deps",

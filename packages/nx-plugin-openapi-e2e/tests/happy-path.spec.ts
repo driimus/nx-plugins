@@ -1,5 +1,5 @@
 // Nrwl
-import { ensureNxProject, runNxCommand, uniq } from '@nrwl/nx-plugin/testing';
+import { ensureNxProject, runNxCommand, uniq } from '@nx/plugin/testing';
 import { existsSync } from 'fs';
 
 describe('Happy-path', () => {
