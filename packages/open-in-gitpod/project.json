@@ -27,7 +27,8 @@
         "tsConfig": "packages/open-in-gitpod/tsconfig.lib.json",
         "packageJson": "packages/open-in-gitpod/package.json",
         "main": "packages/open-in-gitpod/src/index.ts",
-        "assets": ["packages/open-in-gitpod/*.md", "packages/nx-plugin-openapi/LICENSE"]
+        "assets": ["packages/open-in-gitpod/*.md", "packages/nx-plugin-openapi/LICENSE"],
+        "updateBuildableProjectDepsInPackageJson": true
       }
     }
   },

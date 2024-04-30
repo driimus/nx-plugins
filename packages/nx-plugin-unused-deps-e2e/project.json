@@ -5,11 +5,12 @@
   "sourceRoot": "packages/nx-plugin-unused-deps-e2e/src",
   "targets": {
     "e2e": {
-      "executor": "@nx/plugin:e2e",
+      "executor": "@nx/jest:jest",
       "options": {
-        "target": "nx-plugin-unused-deps:build",
-        "jestConfig": "packages/nx-plugin-unused-deps-e2e/jest.config.js"
-      }
+        "jestConfig": "packages/nx-plugin-unused-deps-e2e/jest.config.js",
+        "runInBand": true
+      },
+      "dependsOn": ["nx-plugin-unused-deps:build"]
     }
   },
   "tags": [],

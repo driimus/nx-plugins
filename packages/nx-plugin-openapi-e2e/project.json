@@ -5,11 +5,12 @@
   "sourceRoot": "packages/nx-plugin-openapi-e2e/src",
   "targets": {
     "e2e": {
-      "executor": "@nx/plugin:e2e",
+      "executor": "@nx/jest:jest",
       "options": {
-        "target": "nx-plugin-openapi:build",
-        "jestConfig": "packages/nx-plugin-openapi-e2e/jest.config.js"
-      }
+        "jestConfig": "packages/nx-plugin-openapi-e2e/jest.config.js",
+        "runInBand": true
+      },
+      "dependsOn": ["nx-plugin-openapi:build"]
     }
   },
   "tags": [],
