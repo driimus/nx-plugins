@@ -5,8 +5,7 @@
   "projectType": "library",
   "targets": {
     "lint": {
-      "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "executor": "@nx/eslint:lint",
       "options": {
         "lintFilePatterns": ["packages/nx-plugin-unused-deps/**/*.ts"]
       }
@@ -15,8 +14,7 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/packages/nx-plugin-unused-deps"],
       "options": {
-        "jestConfig": "packages/nx-plugin-unused-deps/jest.config.ts",
-        "passWithNoTests": true
+        "jestConfig": "packages/nx-plugin-unused-deps/jest.config.ts"
       }
     },
     "build": {
@@ -50,8 +48,12 @@
             "glob": "executors.json",
             "output": "."
           }
-        ],
-        "updateBuildableProjectDepsInPackageJson": true
+        ]
+      }
+    },
+    "nx-release-publish": {
+      "options": {
+        "packageRoot": "dist/{projectRoot}"
       }
     }
   },

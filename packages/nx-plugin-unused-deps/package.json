@@ -1,22 +1,18 @@
 {
-  "name": "@trumbitta/nx-plugin-unused-deps",
-  "version": "0.0.0-semantically-released",
+  "name": "@driimus/nx-plugin-unused-deps",
+  "version": "0.0.0-e2e",
   "main": "src/index.js",
   "generators": "./generators.json",
   "executors": "./executors.json",
   "license": "MIT",
   "peerDependencies": {
-    "@nx/workspace": "16.0.0"
+    "@nx/workspace": "^18.3.4"
   },
   "files": [
     "src/**/*.*",
     "executors.json",
-    "generators.json",
-    "tools/scripts/post-install.js"
+    "generators.json"
   ],
-  "scripts": {
-    "postinstall": "node tools/scripts/post-install.js"
-  },
   "keywords": [
     "Nx",
     "Unused dependencies"

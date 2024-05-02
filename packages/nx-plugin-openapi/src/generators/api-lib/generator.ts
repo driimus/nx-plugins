@@ -9,11 +9,11 @@ import {
   names,
   offsetFromRoot,
   ProjectType,
-  readWorkspaceConfiguration,
+  readNxJson,
+  runTasksInSerial,
   Tree,
   updateJson,
 } from '@nx/devkit';
-import { runTasksInSerial } from '@nx/workspace/src/utilities/run-tasks-in-serial';
 // Third Parties
 import { join } from 'path';
 import { GenerateApiLibSourcesExecutorSchema } from '../../executors/generate-api-lib-sources/schema';
@@ -48,7 +48,7 @@ export default async function (tree: Tree, schema: ApiLibGeneratorSchema) {
   createFiles(tree, options);
 
   // Update TS config
-  updateTsConfig(tree, options);
+  // updateTsConfig(tree, options);
 
   // Format
   if (!schema.skipFormat) {
@@ -62,10 +62,10 @@ function normalizeOptions(host: Tree, options: ApiLibGeneratorSchema): Normalize
   const name = names(options.name).fileName;
   const projectDirectory = options.directory ? `${names(options.directory).fileName}/${name}` : name;
   const projectName = projectDirectory.replace(new RegExp('/', 'g'), '-');
-  const { libsDir, npmScope } = getWorkspaceLayout(host);
+  const { libsDir, npmScope } = Object.assign({ npmScope: '' }, getWorkspaceLayout(host));
   const projectRoot = joinPathFragments(`${libsDir}/${projectDirectory}`);
 
-  const workspaceLayout = readWorkspaceConfiguration(host).workspaceLayout ?? { libsDir: 'libs' };
+  const workspaceLayout = readNxJson(host).workspaceLayout ?? { libsDir: 'libs' };
   const projectRootApiSpecLib =
     !options.isRemoteSpec && options.sourceSpecLib ? `${workspaceLayout.libsDir}/${options.sourceSpecLib}` : undefined;
   const parsedTags = options.tags ? options.tags.split(',').map((s) => s.trim()) : [];
@@ -109,7 +109,7 @@ const addProject = (host: Tree, options: NormalizedSchema) => {
     projectType,
     targets: {
       'generate-sources': {
-        executor: '@trumbitta/nx-plugin-openapi:generate-api-lib-sources',
+        executor: '@driimus/nx-plugin-openapi:generate-api-lib-sources',
         options: executorOptions,
       },
     },

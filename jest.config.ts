@@ -1,3 +1,8 @@
-const { getJestProjects } = require('@nx/jest');
+import { getJestProjects } from '@nx/jest';
+import type { Config } from '@jest/types';
 
-export default { projects: [...getJestProjects()] };
+const config: Config.InitialOptions = {
+  projects: getJestProjects(),
+};
+
+export default config;

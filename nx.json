@@ -1,7 +1,5 @@
 {
-  "affected": {
-    "defaultBase": "main"
-  },
+  "defaultBase": "main",
   "workspaceLayout": {
     "appsDir": "packages",
     "libsDir": "packages"
@@ -12,8 +10,16 @@
       "dependsOn": ["^build"],
       "inputs": ["production", "^production"]
     },
-    "test": {
-      "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"]
+    "e2e": {
+      "dependsOn": ["^build"]
+    },
+    "@nx/jest:jest": {
+      "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.ts"]
+    },
+    "@nx/js:tsc": {
+      "cache": true,
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
     }
   },
   "namedInputs": {
@@ -31,5 +37,6 @@
       "!{projectRoot}/jest.config.[jt]s",
       "!{projectRoot}/src/test-setup.[jt]s"
     ]
-  }
+  },
+  "nxCloudAccessToken": "YjBjNjQ0MzgtMTJhYy00ODVlLTk3ZTMtNTg1NmYyNmVjYTE1fHJlYWQtd3JpdGU="
 }

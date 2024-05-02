@@ -16,9 +16,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@trumbitta/nx-plugin-openapi": ["packages/nx-plugin-openapi/src/index.ts"],
-      "@trumbitta/nx-plugin-unused-deps": ["packages/nx-plugin-unused-deps/src/index.ts"],
-      "open-in-gitpod": ["packages/open-in-gitpod/src/index.ts"]
+      "@driimus/nx-plugin-openapi": ["packages/nx-plugin-openapi"],
+      "@driimus/nx-plugin-unused-deps": ["packages/nx-plugin-unused-deps"]
     }
   },
   "exclude": ["node_modules", "tmp"]

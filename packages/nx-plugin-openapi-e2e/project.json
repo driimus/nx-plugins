@@ -6,11 +6,15 @@
   "targets": {
     "e2e": {
       "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "packages/nx-plugin-openapi-e2e/jest.config.js",
+        "jestConfig": "packages/nx-plugin-openapi-e2e/jest.config.ts",
         "runInBand": true
       },
-      "dependsOn": ["nx-plugin-openapi:build"]
+      "dependsOn": ["^build"]
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
     }
   },
   "tags": [],

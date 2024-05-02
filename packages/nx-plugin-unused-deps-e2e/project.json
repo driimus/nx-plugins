@@ -7,10 +7,10 @@
     "e2e": {
       "executor": "@nx/jest:jest",
       "options": {
-        "jestConfig": "packages/nx-plugin-unused-deps-e2e/jest.config.js",
+        "jestConfig": "packages/nx-plugin-unused-deps-e2e/jest.config.ts",
         "runInBand": true
       },
-      "dependsOn": ["nx-plugin-unused-deps:build"]
+      "dependsOn": ["^build"]
     }
   },
   "tags": [],

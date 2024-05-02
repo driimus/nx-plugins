@@ -5,7 +5,7 @@
   "projectType": "library",
   "targets": {
     "lint": {
-      "executor": "@nrwl/linter:eslint",
+      "executor": "@nrwl/eslint:lint",
       "options": {
         "lintFilePatterns": ["packages/nx-plugin-openapi/**/*.ts"]
       }
@@ -14,8 +14,7 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/packages/nx-plugin-openapi"],
       "options": {
-        "jestConfig": "packages/nx-plugin-openapi/jest.config.ts",
-        "passWithNoTests": true
+        "jestConfig": "packages/nx-plugin-openapi/jest.config.ts"
       }
     },
     "build": {
@@ -49,8 +48,12 @@
             "glob": "executors.json",
             "output": "."
           }
-        ],
-        "updateBuildableProjectDepsInPackageJson": true
+        ]
+      }
+    },
+    "nx-release-publish": {
+      "options": {
+        "packageRoot": "dist/{projectRoot}"
       }
     }
   },
