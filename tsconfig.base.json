@@ -16,8 +16,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@driimus/nx-plugin-openapi": ["packages/nx-plugin-openapi"],
-      "@driimus/nx-plugin-unused-deps": ["packages/nx-plugin-unused-deps"]
+      "@driimus/nx-plugin-openapi": ["packages/nx-plugin-openapi"]
     }
   },
   "exclude": ["node_modules", "tmp"]
