@@ -1,28 +1,31 @@
-name: PR Test
+name: Test
 on:
   pull_request:
     branches: [main]
+
 env:
   NX_BRANCH: ${{ github.event.pull_request.head.ref }}
   NX_RUN_GROUP: ${{ github.run_id }}
+
 jobs:
   test:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [12.x]
+        node-version: [18, 20]
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-      - run: git fetch origin main
+          cache: npm
       - run: npm ci
-      - name: Run Affected Tests
-        shell: bash
-        run: |
-          npm run affected:test -- --base=remotes/origin/main
-          npm run affected:e2e -- --base=remotes/origin/main
+
+      - name: Derive appropriate SHAs for base and head for `nx affected` commands
+        uses: nrwl/nx-set-shas@v4
+
+      - run: npm run affected:test
+      - run: npm run affected:e2e

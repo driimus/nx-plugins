@@ -1,3 +1,22 @@
+## 1.13.0 (2024-05-12)
+
+
+### 🚀 Features
+
+- **nx:** migrate to v14 ([a5ed5a3](https://github.com/driimus/nx-trumbitta/commit/a5ed5a3))
+- **nx:** migrate to v15 ([1435e9e](https://github.com/driimus/nx-trumbitta/commit/1435e9e))
+- **nx:** migrate to v16 ([354bdd4](https://github.com/driimus/nx-trumbitta/commit/354bdd4))
+- **nx:** migrate to v17 ([bff63bf](https://github.com/driimus/nx-trumbitta/commit/bff63bf))
+
+### 🩹 Fixes
+
+- **e2e:** local package registry ([fff9c28](https://github.com/driimus/nx-trumbitta/commit/fff9c28))
+- **e2e:** local package registry ([d46e15d](https://github.com/driimus/nx-trumbitta/commit/d46e15d))
+
+### ❤️  Thank You
+
+- Cristian Petre
+
 ### [1.12.1](https://github.com/trumbitta/nx-trumbitta/compare/v1.12.0...v1.12.1) (2022-08-28)
 
 
