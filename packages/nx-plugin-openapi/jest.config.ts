@@ -1,4 +1,6 @@
 /* eslint-disable */
+import { Config } from 'jest';
+
 export default {
   displayName: 'nx-plugin-openapi',
 
@@ -14,6 +16,5 @@ export default {
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
   coverageDirectory: '../../coverage/packages/nx-plugin-openapi',
-  testTimeout: 30_000,
   preset: '../../jest.preset.js',
-};
+} satisfies Config;

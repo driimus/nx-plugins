@@ -48,7 +48,7 @@ export default async function (tree: Tree, schema: ApiLibGeneratorSchema) {
   createFiles(tree, options);
 
   // Update TS config
-  // updateTsConfig(tree, options);
+  updateTsConfig(tree, options);
 
   // Format
   if (!schema.skipFormat) {
