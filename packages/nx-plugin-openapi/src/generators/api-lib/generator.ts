@@ -6,6 +6,7 @@ import {
   GeneratorCallback,
   getWorkspaceLayout,
   joinPathFragments,
+  logger,
   names,
   offsetFromRoot,
   ProjectType,
@@ -129,6 +130,10 @@ function createFiles(host: Tree, options: NormalizedSchema) {
 }
 
 function updateTsConfig(host: Tree, options: NormalizedSchema): void {
+  if (!host.exists('tsconfig.base.json')) {
+    return logger.debug('No tsconfig.base.json found, skipping update.');
+  }
+
   updateJson(host, 'tsconfig.base.json', (json) => {
     const compilerOptions = json.compilerOptions;
     compilerOptions.paths = compilerOptions.paths || {};
