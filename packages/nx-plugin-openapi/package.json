@@ -13,6 +13,16 @@
     "OpenAPI"
   ],
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "provenance": true
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/driimus/nx-trumbitta.git",
+    "directory": "packages/nx-plugin-openapi"
+  },
+  "homepage": "https://github.com/driimus/nx-trumbitta/blob/main/packages/nx-plugin-openapi#readme",
+  "bugs": {
+    "url": "https://github.com/driimus/nx-trumbitta/issues"
   }
 }
