@@ -4,8 +4,7 @@ on:
     branches: [main]
 
 env:
-  NX_BRANCH: ${{ github.event.pull_request.head.ref }}
-  NX_RUN_GROUP: ${{ github.run_id }}
+  NX_CLOUD_ACCESS_TOKEN: ${{ secrets.NX_CLOUD_TOKEN }}
 
 jobs:
   test:
@@ -27,5 +26,5 @@ jobs:
       - name: Derive appropriate SHAs for base and head for `nx affected` commands
         uses: nrwl/nx-set-shas@v4
 
-      - run: npm run affected:test
-      - run: npm run affected:e2e
+      - run: npx nx affected:test
+      - run: npx nx affected:e2e
