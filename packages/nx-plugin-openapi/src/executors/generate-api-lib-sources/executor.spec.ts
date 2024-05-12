@@ -65,8 +65,7 @@ describe('Command Runner Builder', () => {
     allSpawned();
   });
 
-  // TODO
-  it.skip('can run in docker', async () => {
+  it('can run in docker', async () => {
     const allSpawned = mockSpawn({
       command: 'docker',
       args: [
