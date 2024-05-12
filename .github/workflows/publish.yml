@@ -29,6 +29,11 @@ jobs:
 
       - run: npm ci
 
+      - name: Configure git author
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
       - name: Release
         run: npx nx release
         env:
