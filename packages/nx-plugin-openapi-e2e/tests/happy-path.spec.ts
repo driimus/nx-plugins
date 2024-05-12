@@ -44,9 +44,8 @@ describe('Happy-path', () => {
   beforeAll(() => {
     projectDirectory = createTestProject();
 
-    
-    Object.assign(process.env, {NX_DAEMON: false})
-    
+    Object.assign(process.env, { NX_DAEMON: false });
+
     // The plugin has been built and published to a local registry in the jest globalSetup
     // Install the plugin built with the latest source code into the test repo
     execSync(`npm install @driimus/nx-plugin-openapi@e2e`, {
@@ -63,7 +62,6 @@ describe('Happy-path', () => {
       force: true,
     });
   });
-
 
   it('should work with a local spec', () => {
     runNxCommand(`generate @driimus/nx-plugin-openapi:api-spec ${apiSpecLibName} --withSample`);
