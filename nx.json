@@ -37,6 +37,11 @@
   "release": {
     "version": {
       "conventionalCommits": true
+    },
+    "changelog": {
+      "projectChangelogs": {
+        "createRelease": "github"
+      }
     }
   }
 }
