@@ -13,6 +13,9 @@
     "e2e": {
       "dependsOn": ["^build"]
     },
+    "nx-release-publish": {
+      "dependsOn": ["build", "^build"]
+    },
     "@nx/jest:jest": {
       "inputs": ["default", "^production", "{workspaceRoot}/jest.*"]
     },
@@ -35,11 +38,16 @@
   },
   "nxCloudAccessToken": "ODljYzhlMjYtMmIzYS00OWUwLWE3NTItZWNlNDE0MTc5ZDlkfHJlYWQ=",
   "release": {
+    "projects": ["packages/*", "!packages/*-e2e"],
     "version": {
       "conventionalCommits": true
     },
     "changelog": {
+      "workspaceChangelog": {
+        "file": false
+      },
       "projectChangelogs": {
+        "file": false,
         "createRelease": "github"
       }
     }

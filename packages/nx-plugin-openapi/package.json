@@ -11,5 +11,8 @@
   "keywords": [
     "Nx",
     "OpenAPI"
-  ]
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
 }
