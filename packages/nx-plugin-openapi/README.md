@@ -56,7 +56,6 @@ nx generate @driimus/nx-plugin-openapi:api-lib
 UPDATE workspace.json
 UPDATE nx.json
 CREATE libs/api-docs/README.md
-CREATE libs/api-docs/.babelrc
 UPDATE tsconfig.base.json
 ```
 
@@ -81,7 +80,6 @@ nx generate @driimus/nx-plugin-openapi:api-lib
 UPDATE workspace.json
 UPDATE nx.json
 CREATE libs/api-fetch/README.md
-CREATE libs/api-fetch/.babelrc
 UPDATE tsconfig.base.json
 ```
 
