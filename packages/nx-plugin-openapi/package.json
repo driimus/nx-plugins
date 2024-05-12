@@ -1,20 +1,21 @@
 {
   "name": "@driimus/nx-plugin-openapi",
-  "version": "2.0.1",
+  "version": "0.0.0",
   "main": "src/index.js",
   "generators": "./generators.json",
   "executors": "./executors.json",
   "license": "MIT",
   "peerDependencies": {
-    "@nx/workspace": "^19.0.2"
+    "@nx/workspace": "^19.0.2",
+    "cross-spawn": "^7.0.3",
+    "rimraf": "^5.0.7"
   },
   "keywords": [
     "Nx",
     "OpenAPI"
   ],
   "publishConfig": {
-    "access": "public",
-    "provenance": true
+    "access": "public"
   },
   "repository": {
     "type": "git",

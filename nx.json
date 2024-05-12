@@ -8,14 +8,10 @@
   "targetDefaults": {
     "build": {
       "dependsOn": ["^build"],
-      "inputs": ["production", "^production"],
-      "cache": false
+      "inputs": ["production", "^production"]
     },
     "e2e": {
       "dependsOn": ["^build"]
-    },
-    "nx-release-publish": {
-      "dependsOn": ["build", "^build"]
     },
     "@nx/jest:jest": {
       "inputs": ["default", "^production", "{workspaceRoot}/jest.*"]
@@ -41,7 +37,10 @@
   "release": {
     "projects": ["packages/*", "!packages/*-e2e"],
     "version": {
-      "conventionalCommits": true
+      "conventionalCommits": true,
+      "generatorOptions": {
+        "packageRoot": "dist/{projectRoot}"
+      }
     },
     "changelog": {
       "workspaceChangelog": {
