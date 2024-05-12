@@ -14,7 +14,7 @@
       "dependsOn": ["^build"]
     },
     "@nx/jest:jest": {
-      "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.ts"]
+      "inputs": ["default", "^production", "{workspaceRoot}/jest.*"]
     },
     "@nx/js:tsc": {
       "cache": true,
@@ -24,12 +24,7 @@
   },
   "namedInputs": {
     "default": ["{projectRoot}/**/*", "sharedGlobals"],
-    "sharedGlobals": [
-      "{workspaceRoot}/workspace.json",
-      "{workspaceRoot}/tsconfig.base.json",
-      "{workspaceRoot}/tslint.json",
-      "{workspaceRoot}/nx.json"
-    ],
+    "sharedGlobals": ["{workspaceRoot}/tsconfig.base.json", "{workspaceRoot}/nx.json"],
     "production": [
       "default",
       "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
@@ -37,6 +32,5 @@
       "!{projectRoot}/jest.config.[jt]s",
       "!{projectRoot}/src/test-setup.[jt]s"
     ]
-  },
-  "nxCloudAccessToken": "YjBjNjQ0MzgtMTJhYy00ODVlLTk3ZTMtNTg1NmYyNmVjYTE1fHJlYWQtd3JpdGU="
+  }
 }
