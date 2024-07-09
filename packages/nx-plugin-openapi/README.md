@@ -1,6 +1,6 @@
 # OpenAPI Plugin for Nx
 
-[![NPM Version](https://img.shields.io/npm/v/%40driimus%2Fnx-plugin-openapi?style=flat)](https://www.npmjs.com/package/oasin)
+[![NPM Version](https://img.shields.io/npm/v/%40driimus%2Fnx-plugin-openapi?style=flat)](https://npmjs.com/package/@driimus/nx-plugin-openapi)
 [![License](https://img.shields.io/npm/l/@driimus/nx-plugin-openapi)]()
 
 Keep your API spec files in libs, and auto-generate sources and docs.
