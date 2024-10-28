@@ -6,8 +6,11 @@ import { mockSpawn } from '../../test/mockSpawn';
 import executor from './executor';
 import { GenerateApiLibSourcesExecutorSchema } from './schema';
 
+// jest.mock('prettier', () => null);
+
 beforeEach(() => {
   jest.resetAllMocks();
+  jest.mock('prettier', () => null);
 });
 
 describe('Command Runner Builder', () => {
@@ -33,9 +36,11 @@ describe('Command Runner Builder', () => {
       cwd: '/root',
       projectName: 'proj',
       targetName: 'generate-sources',
-      workspace: {
+      isVerbose: false,
+      nxJsonConfiguration: {},
+      projectGraph: { dependencies: {}, nodes: {} },
+      projectsConfigurations: {
         version: 2,
-        npmScope: 'foo',
         projects: {
           proj: {
             root: '',
@@ -44,7 +49,6 @@ describe('Command Runner Builder', () => {
           },
         },
       },
-      isVerbose: false,
     });
   });
 

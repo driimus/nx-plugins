@@ -8,7 +8,7 @@ export default async function runExecutor(
   options: GenerateApiLibSourcesExecutorSchema,
   context: ExecutorContext,
 ): Promise<{ success: boolean }> {
-  const outputDir = context.workspace!.projects[context.projectName!].sourceRoot!;
+  const outputDir = context.projectsConfigurations.projects[context.projectName!].sourceRoot!;
   const root = context.root;
 
   logger.info(`Deleting outputDir ${outputDir}...`);

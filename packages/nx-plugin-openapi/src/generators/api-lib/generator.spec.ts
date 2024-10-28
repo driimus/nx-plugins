@@ -9,6 +9,8 @@ import libraryGenerator from './generator';
 import { GenerateApiLibSourcesExecutorSchema } from '../../executors/generate-api-lib-sources/schema';
 import { ApiLibGeneratorSchema } from './schema';
 
+jest.mock('prettier', () => null);
+
 describe('api-lib schematic', () => {
   let appTree: Tree;
 
