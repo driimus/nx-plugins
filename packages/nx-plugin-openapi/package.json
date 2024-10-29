@@ -7,7 +7,7 @@
   "executors": "./executors.json",
   "license": "MIT",
   "peerDependencies": {
-    "@nx/workspace": "^19.0.2",
+    "@nx/workspace": "^20.0.6",
     "cross-spawn": "^7.0.3",
     "rimraf": "^5.0.7"
   },
