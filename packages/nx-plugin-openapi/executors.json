@@ -1,5 +1,4 @@
 {
-  "$schema": "http://json-schema.org/schema",
   "executors": {
     "generate-api-lib-sources": {
       "implementation": "./src/executors/generate-api-lib-sources/executor",

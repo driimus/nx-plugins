@@ -1,0 +1,6 @@
+{
+  "$id": "@driimus/nx-plugin-openapi:init",
+  "title": "Init generator options",
+  "type": "object",
+  "properties": {}
+}
