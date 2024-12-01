@@ -1,4 +1,3 @@
-// Nrwl
 import { runNxCommand, uniq } from '@nx/plugin/testing';
 import { execSync } from 'child_process';
 import { existsSync, mkdirSync, rmSync } from 'fs';
@@ -30,7 +29,7 @@ function createTestProject() {
   return projectDirectory;
 }
 
-describe('Happy-path', () => {
+describe('nx-plugin-openapi', () => {
   let apiSpecLibName: string;
   let apiLibLibName: string;
 
@@ -84,7 +83,7 @@ describe('Happy-path', () => {
     expect(existsSync(`./tmp/nx-e2e/proj/libs/${apiLibLibName}/src/index.ts`)).toBe(true);
   }, 120000);
 
-  // TODO
+  // TODO: #3
   it.skip('should work with docker', () => {
     runNxCommand(`generate @driimus/nx-plugin-openapi:api-spec ${apiSpecLibName} --withSample`);
 
@@ -167,5 +166,11 @@ describe('Happy-path', () => {
       // TODO devise proper expectations
       expect(execute).toContain('Done deleting outputDir');
     }, 120000);
+  });
+
+  it('should support bootstrapping with nx add', async () => {
+    const execute = runNxCommand('add @driimus/nx-plugin-openapi@e2e');
+
+    expect(execute).toContain('✔ Initializing @driimus/nx-plugin-openapi');
   });
 });
