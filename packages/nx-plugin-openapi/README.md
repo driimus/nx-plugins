@@ -12,7 +12,7 @@ It's a plugin for organizing OpenAPI spec files in libraries. You can then have 
 ## 💡 How to install
 
 ```sh
-npm install -D @driimus/nx-plugin-openapi
+nx add @driimus/nx-plugin-openapi
 ```
 
 ### Prerequisites
