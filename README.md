@@ -1,8 +1,8 @@
-# nx-trumbitta
+# NX Plugins
 
 [![License](https://img.shields.io/npm/l/@driimus/nx-plugin-openapi)]()
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
-[![Test](https://github.com/driimus/nx-trumbitta/actions/workflows/test.yml/badge.svg)](https://github.com/driimus/nx-trumbitta/actions/workflows/test.yml)
+[![Test](https://github.com/driimus/nx-plugins/actions/workflows/test.yml/badge.svg)](https://github.com/driimus/nx-plugins/actions/workflows/test.yml)
 
 ## Constituent packages
 
