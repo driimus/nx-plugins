@@ -69,14 +69,13 @@ describe('Command Runner Builder', () => {
     allSpawned();
   });
 
-  // TODO
-  it.skip('can run in docker', async () => {
+  it('can run in docker', async () => {
     const allSpawned = mockSpawn({
       command: 'docker',
       args: [
         'run',
         '--rm',
-        ...['-v', `${process.cwd()}:/local`],
+        ...['-v', `${process.cwd()}:/local:rw`],
         ...['-w', '/local'],
         'openapitools/openapi-generator-cli',
         'generate',
