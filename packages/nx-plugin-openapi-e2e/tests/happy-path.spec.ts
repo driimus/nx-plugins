@@ -56,10 +56,7 @@ describe('nx-plugin-openapi', () => {
 
   afterAll(() => {
     // Cleanup the test project
-    rmSync(projectDirectory, {
-      recursive: true,
-      force: true,
-    });
+    execSync(`sudo rm -rf ${projectDirectory}`);
   });
 
   it('should work with a local spec', () => {
@@ -83,8 +80,7 @@ describe('nx-plugin-openapi', () => {
     expect(existsSync(`./tmp/nx-e2e/proj/libs/${apiLibLibName}/src/index.ts`)).toBe(true);
   }, 120000);
 
-  // TODO: #3
-  it.skip('should work with docker', () => {
+  it('should work with docker', () => {
     runNxCommand(`generate @driimus/nx-plugin-openapi:api-spec ${apiSpecLibName} --withSample`);
 
     runNxCommand(

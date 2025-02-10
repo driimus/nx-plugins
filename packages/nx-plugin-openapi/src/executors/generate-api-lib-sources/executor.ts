@@ -41,7 +41,15 @@ async function generateSources(
     const { command, args } = useDockerBuild
       ? {
           command: 'docker',
-          args: ['run', '--rm', '-v', `${process.cwd()}:/local`, '-w', '/local', 'openapitools/openapi-generator-cli'],
+          args: [
+            'run',
+            '--rm',
+            '-v',
+            `${process.cwd()}:/local:rw`,
+            '-w',
+            '/local',
+            'openapitools/openapi-generator-cli',
+          ],
         }
       : { command: 'npx', args: ['openapi-generator-cli'] };
 
@@ -66,7 +74,7 @@ async function generateSources(
     logger.info(`[command]: ${command} ${args.join(' ')}`);
 
     const child = spawn(command, args, { stdio: silent ? 'ignore' : 'pipe' });
-
+    // TODO: chown here?
     child.stdout?.on('data', (data) => {
       logger.info(`[stdout]: ${data}`);
     });
