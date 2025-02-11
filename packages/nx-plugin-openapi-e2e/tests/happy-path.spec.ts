@@ -167,6 +167,6 @@ describe('nx-plugin-openapi', () => {
   it('should support bootstrapping with nx add', async () => {
     const execute = runNxCommand('add @driimus/nx-plugin-openapi@e2e');
 
-    expect(execute).toContain('✔ Initializing @driimus/nx-plugin-openapi');
+    expect(execute).toContain('Package @driimus/nx-plugin-openapi added successfully.');
   });
 });
