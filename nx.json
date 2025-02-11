@@ -51,6 +51,5 @@
         "createRelease": "github"
       }
     }
-  },
-  "useLegacyCache": true
+  }
 }
