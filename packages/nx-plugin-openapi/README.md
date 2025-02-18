@@ -5,21 +5,21 @@
 
 Keep your API spec files in libs, and auto-generate sources and docs.
 
-## 🧐 What is it?
+It's a plugin for organizing OpenAPI spec files in libraries.
+You can then have other libraries for API SDKs, server stubs, or documentation, all auto-generated from the spec files.
 
-It's a plugin for organizing OpenAPI spec files in libraries. You can then have other libraries for API SDKs, server stubs, or documentation, all auto-generated from the spec files.
+## Installation
 
-## 💡 How to install
+### Prerequisites
+
+Sources get auto-generated via [`openapi-generator-cli`](https://github.com/OpenAPITools/openapi-generator-cli),
+which requires an active Java or Docker installation.
 
 ```sh
 nx add @driimus/nx-plugin-openapi
 ```
 
-### Prerequisites
-
-Sources get auto-generated via [`openapi-generator-cli`](https://github.com/OpenAPITools/openapi-generator-cli), so you'll need Java 8 or Docker installed.
-
-## 🧰 Usage
+## Usage
 
 ### Create a lib for an API spec file
 
@@ -100,13 +100,13 @@ npx http-server libs/api-docs/src
 nx run api-fetch:generate-sources
 ```
 
-## ✍️ Generators
+## Generators
 
 This OpenAPI plugin for Nx should support any generator you can use with `openapi-generator-cli`.
 
 Find the ones you need, together with all the additional properties available for each generator, here: https://openapi-generator.tech/docs/generators
 
-## 🙏 Acknowledgements
+## Acknowledgements
 
 Many thanks to every project and every person I took inspiration from, but especially:
 

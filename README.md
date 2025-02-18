@@ -6,5 +6,5 @@
 
 ## Constituent packages
 
-- 🤖 [@driimus/nx-plugin-openapi](packages/nx-plugin-openapi/README.md)  
+- [@driimus/nx-plugin-openapi](packages/nx-plugin-openapi/README.md)  
   Keep your API spec files in libs, and auto-generate sources
