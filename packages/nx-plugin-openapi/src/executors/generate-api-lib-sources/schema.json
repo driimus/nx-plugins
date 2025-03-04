@@ -40,6 +40,13 @@
       "type": "boolean",
       "description": "Whether or not to suppress generator output",
       "default": false
+    },
+    "ignoreList": {
+      "type": "array",
+      "description": "A list of entries to pre-populate .openapi-generator-ignore with",
+      "items": {
+        "type": "string"
+      }
     }
   },
   "required": []

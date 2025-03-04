@@ -32,6 +32,7 @@ async function generateSources(
     globalProperties,
     typeMappings,
     silent,
+    ignoreList,
   }: GenerateApiLibSourcesExecutorSchema,
   outputDir: string,
 ): Promise<number> {
@@ -69,6 +70,10 @@ async function generateSources(
 
     if (globalProperties) {
       args.push('--global-property', globalProperties);
+    }
+
+    if (ignoreList) {
+      args.push('--openapi-generator-ignore-list', ignoreList.join());
     }
 
     logger.info(`[command]: ${command} ${args.join(' ')}`);
