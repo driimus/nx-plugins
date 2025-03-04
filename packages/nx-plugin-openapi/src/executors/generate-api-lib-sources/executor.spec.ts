@@ -111,6 +111,31 @@ describe('Command Runner Builder', () => {
     allSpawned();
   });
 
+  it('can pass ignore list', async () => {
+    const ignoreList = ['./path-a/*', './path-b/file.txt'];
+    const allSpawned = mockSpawn({
+      command: 'npx',
+      args: [
+        'openapi-generator-cli',
+        'generate',
+        ...['-i', 'open-api-spec.yml'],
+        ...['-g', 'typescript-fetch'],
+        ...['-o', './tmp/src/local'],
+        ...['--openapi-generator-ignore-list', ignoreList.join(',')],
+      ],
+      stdout: 'stdout content',
+      stderr: 'stderr content',
+      exitCode: 0,
+    });
+
+    const { success } = await executor({ ...schema, ignoreList }, context('local'));
+
+    expect(success).toBe(true);
+    expect(logger.info).toHaveBeenLastCalledWith(expect.stringContaining('stdout content'));
+    expect(logger.error).toHaveBeenLastCalledWith(expect.stringContaining('stderr content'));
+    allSpawned();
+  });
+
   it('can run without output', async () => {
     const allSpawned = mockSpawn({
       command: 'npx',
