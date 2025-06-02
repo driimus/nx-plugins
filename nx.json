@@ -38,9 +38,8 @@
     "projects": ["packages/*", "!packages/*-e2e"],
     "version": {
       "conventionalCommits": true,
-      "generatorOptions": {
-        "packageRoot": "dist/{projectRoot}"
-      }
+      "preserveLocalDependencyProtocols": false,
+      "manifestRootsToUpdate": ["dist/{projectRoot}"]
     },
     "changelog": {
       "workspaceChangelog": {
