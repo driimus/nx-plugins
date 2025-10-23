@@ -3,6 +3,7 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/nx-plugin-openapi/src",
   "projectType": "library",
+  "tags": [],
   "targets": {
     "lint": {
       "executor": "@nrwl/eslint:lint",
@@ -56,6 +57,5 @@
         "packageRoot": "dist/{projectRoot}"
       }
     }
-  },
-  "tags": []
+  }
 }
