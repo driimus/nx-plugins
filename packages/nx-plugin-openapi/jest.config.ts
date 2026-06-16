@@ -1,7 +1,7 @@
 /* eslint-disable */
-import { Config } from 'jest';
+import type { Config } from 'jest';
 
-export default {
+module.exports = {
   displayName: 'nx-plugin-openapi',
 
   globals: {},
