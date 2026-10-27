@@ -5,16 +5,32 @@
     "libsDir": "packages"
   },
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "plugins": [
+    {
+      "plugin": "@nx/vitest",
+      "include": ["packages/*-e2e/**/*"],
+      "options": {
+        "testTargetName": "e2e",
+        "testMode": "run"
+      }
+    },
+    {
+      "plugin": "@nx/vitest",
+      "exclude": ["packages/*-e2e/**/*"],
+      "options": {
+        "testTargetName": "test",
+        "testMode": "run"
+      }
+    }
+  ],
   "targetDefaults": {
     "build": {
       "dependsOn": ["^build"],
       "inputs": ["production", "^production"]
     },
     "e2e": {
+      "cache": false,
       "dependsOn": ["^build"]
-    },
-    "@nx/jest:jest": {
-      "inputs": ["default", "^production", "{workspaceRoot}/jest.*"]
     },
     "@nx/js:tsc": {
       "cache": true,
@@ -29,7 +45,7 @@
       "default",
       "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
       "!{projectRoot}/tsconfig.spec.json",
-      "!{projectRoot}/jest.config.[jt]s",
+      "!{projectRoot}/vitest.config.*",
       "!{projectRoot}/src/test-setup.[jt]s"
     ]
   },

@@ -11,13 +11,6 @@
         "lintFilePatterns": ["packages/nx-plugin-openapi/**/*.ts"]
       }
     },
-    "test": {
-      "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/packages/nx-plugin-openapi"],
-      "options": {
-        "jestConfig": "packages/nx-plugin-openapi/jest.config.ts"
-      }
-    },
     "build": {
       "executor": "@nx/js:tsc",
       "outputs": ["{options.outputPath}"],

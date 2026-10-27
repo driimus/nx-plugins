@@ -1,3 +1,5 @@
+import { beforeEach, describe, expect, it, vi } from 'vitest';
+
 // Nrwl
 import { Tree, readJson, readProjectConfiguration, updateJson } from '@nx/devkit';
 import { createTreeWithEmptyWorkspace } from '@nx/devkit/testing';
@@ -9,7 +11,7 @@ import libraryGenerator from './generator';
 import { GenerateApiLibSourcesExecutorSchema } from '../../executors/generate-api-lib-sources/schema';
 import { ApiLibGeneratorSchema } from './schema';
 
-jest.mock('prettier', () => null);
+vi.mock('prettier', () => ({}));
 
 describe('api-lib schematic', () => {
   let appTree: Tree;
@@ -26,7 +28,7 @@ describe('api-lib schematic', () => {
   });
 
   describe('not nested', () => {
-    it.failing('should update tsconfig.base.json', async () => {
+    it.fails('should update tsconfig.base.json', async () => {
       await libraryGenerator(appTree, defaultSchema);
       const tsconfigJson = readJson(appTree, 'tsconfig.base.json');
 
@@ -35,7 +37,7 @@ describe('api-lib schematic', () => {
       ]);
     });
 
-    it.failing('should update root tsconfig.base.json (no existing path mappings)', async () => {
+    it.fails('should update root tsconfig.base.json (no existing path mappings)', async () => {
       updateJson(appTree, 'tsconfig.base.json', (json) => {
         json.compilerOptions.paths = undefined;
         return json;
