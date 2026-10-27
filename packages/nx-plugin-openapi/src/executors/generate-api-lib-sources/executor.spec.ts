@@ -1,24 +1,24 @@
-jest.mock('child_process');
-jest.mock('@nx/devkit');
+import { beforeEach, describe, expect, it, vi } from 'vitest';
+
+vi.mock('cross-spawn');
+vi.mock('@nx/devkit');
+vi.mock('prettier', () => ({}));
 
 import { ExecutorContext, logger } from '@nx/devkit';
 import { mockSpawn } from '../../test/mockSpawn';
 import executor from './executor';
 import { GenerateApiLibSourcesExecutorSchema } from './schema';
 
-// jest.mock('prettier', () => null);
-
 beforeEach(() => {
-  jest.resetAllMocks();
-  jest.mock('prettier', () => null);
+  vi.resetAllMocks();
 });
 
 describe('Command Runner Builder', () => {
   let context: (dir: string) => ExecutorContext;
   let schema: GenerateApiLibSourcesExecutorSchema;
   let dockerSchema: GenerateApiLibSourcesExecutorSchema;
-  logger.log = jest.fn();
-  logger.error = jest.fn();
+  logger.log = vi.fn();
+  logger.error = vi.fn();
 
   beforeEach(async () => {
     schema = {

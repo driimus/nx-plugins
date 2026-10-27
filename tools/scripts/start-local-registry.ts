@@ -1,18 +1,19 @@
 /**
  * This script starts a local registry for e2e testing purposes.
- * It is meant to be called in jest's globalSetup.
+ * It is meant to be used as vitest's globalSetup.
  */
+import { workspaceRoot } from '@nx/devkit';
 import { startLocalRegistry } from '@nx/js/plugins/jest/local-registry';
 import { releasePublish, releaseVersion } from 'nx/release';
+import { join } from 'path';
 
 export default async () => {
   // local registry target to run
   const localRegistryTarget = 'root:local-registry';
   // storage folder for the local registry
-  const storage = './tmp/local-registry/storage';
+  const storage = join(workspaceRoot, 'tmp/local-registry/storage');
 
-  // @ts-expect-error
-  global.stopLocalRegistry = await startLocalRegistry({
+  const stopLocalRegistry = await startLocalRegistry({
     localRegistryTarget,
     storage,
     verbose: false,
@@ -32,4 +33,7 @@ export default async () => {
     tag: 'e2e',
     firstRelease: true,
   });
+
+  // vitest calls the returned function as the global teardown
+  return stopLocalRegistry;
 };

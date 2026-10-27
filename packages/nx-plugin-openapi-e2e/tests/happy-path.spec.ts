@@ -1,7 +1,9 @@
-import { runNxCommand, uniq } from '@nx/plugin/testing';
+import { workspaceRoot } from '@nx/devkit';
+import { runNxCommand, tmpProjPath, uniq } from '@nx/plugin/testing';
 import { execSync } from 'child_process';
 import { existsSync, mkdirSync, rmSync } from 'fs';
 import { dirname, join } from 'path';
+import { afterAll, beforeAll, beforeEach, describe, expect, it } from 'vitest';
 
 /**
  * Creates a test project with create-nx-workspace and installs the plugin
@@ -9,7 +11,7 @@ import { dirname, join } from 'path';
  */
 function createTestProject() {
   const projectName = 'proj';
-  const projectDirectory = join(process.cwd(), 'tmp/nx-e2e', projectName);
+  const projectDirectory = join(workspaceRoot, 'tmp/nx-e2e', projectName);
 
   // Ensure projectDirectory is empty
   rmSync(projectDirectory, {
@@ -45,7 +47,7 @@ describe('nx-plugin-openapi', () => {
 
     Object.assign(process.env, { NX_DAEMON: false });
 
-    // The plugin has been built and published to a local registry in the jest globalSetup
+    // The plugin has been built and published to a local registry in the vitest globalSetup
     // Install the plugin built with the latest source code into the test repo
     execSync(`npm install @driimus/nx-plugin-openapi@e2e`, {
       cwd: projectDirectory,
@@ -77,7 +79,7 @@ describe('nx-plugin-openapi', () => {
 
     // TODO devise proper expectations
     expect(execute).toContain('Done deleting outputDir');
-    expect(existsSync(`./tmp/nx-e2e/proj/libs/${apiLibLibName}/src/index.ts`)).toBe(true);
+    expect(existsSync(tmpProjPath(`libs/${apiLibLibName}/src/index.ts`))).toBe(true);
   }, 120000);
 
   it('should work with docker', () => {
@@ -99,7 +101,7 @@ describe('nx-plugin-openapi', () => {
 
     // TODO devise proper expectations
     expect(execute).toContain('Done deleting outputDir');
-    expect(existsSync(`./tmp/nx-e2e/proj/libs/${apiLibLibName}/src/index.ts`)).toBe(true);
+    expect(existsSync(tmpProjPath(`libs/${apiLibLibName}/src/index.ts`))).toBe(true);
   }, 120000);
 
   it('should work with a remote spec', () => {
