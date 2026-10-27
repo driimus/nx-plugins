@@ -102,7 +102,7 @@ importers:
   packages/nx-plugin-openapi:
     dependencies:
       '@nx/workspace':
-        specifier: '>= 20 < 24'
+        specifier: '>= 20 < 25'
         version: 23.0.0(@swc-node/register@1.11.1(@swc/core@1.15.8(@swc/helpers@0.5.23))(@swc/types@0.1.27)(typescript@5.9.3))(@swc/core@1.15.8(@swc/helpers@0.5.23))
       cross-spawn:
         specifier: ^7.0.3
